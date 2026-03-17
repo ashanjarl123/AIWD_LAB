@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formula 1 - Event Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#1a1a1a 0%,#2d2d2d 100%);color:#eee;line-height:1.6;padding:20px}
+        header{background:linear-gradient(135deg,#dc0000 0%,#333 100%);border-bottom:3px solid #ffd700;padding:40px 20px;text-align:center}
+        header h1{font-size:2.5rem;color:#fff;letter-spacing:2px;margin-bottom:10px}
+        header p{color:#ffd700;font-style:italic}
+
+        /* Banner image you will add */
+        .banner{max-width:900px;margin:30px auto;border:2px solid #ffd700;border-radius:8px;overflow:hidden}
+        .banner img{width:100%;height:300px;object-fit:cover;display:block}
+
+        main{max-width:900px;margin:30px auto;background:rgba(45,45,45,0.9);border:2px solid #ffd700;border-radius:8px;padding:35px}
+        h2{color:#ffd700;font-size:1.8rem;margin-bottom:20px;border-bottom:2px solid #ffd700;padding-bottom:10px}
+        h3{color:#fff;font-size:1.1rem;margin:20px 0 10px}
+        .media-box{margin:25px 0}
+        video,audio{width:100%;margin:10px 0;border:1px solid #ffd700;border-radius:4px;background:#000}
+        form{display:flex;flex-direction:column;gap:15px;margin-top:20px}
+        .form-group{display:flex;flex-direction:column}
+        label{color:#fff;font-weight:600;margin-bottom:6px;font-size:0.9rem}
+        input[type="text"],input[type="email"],input[type="date"],select,textarea{padding:10px 12px;border:1px solid #ffd700;background:rgba(0,0,0,0.5);color:#eee;border-radius:4px;font-size:0.95rem;transition:all 0.3s ease}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:#fff;box-shadow:0 0 10px rgba(255,215,0,0.3)}
+        textarea{resize:vertical;min-height:100px}
+        .radio-group{display:flex;flex-wrap:wrap;gap:15px;margin-top:8px}
+        .radio-group label{margin:0;color:#eee;font-weight:normal;display:flex;align-items:center}
+        input[type="radio"]{margin-right:8px;accent-color:#ffd700}
+        .btn{background:linear-gradient(135deg,#dc0000 0%,#ff3333 100%);color:#fff;border:none;padding:12px 30px;font-weight:600;text-transform:uppercase;letter-spacing:1px;border-radius:4px;cursor:pointer;transition:all 0.3s ease}
+        .btn:hover{transform:translateY(-2px);box-shadow:0 5px 15px rgba(220,0,0,0.4)}
+        footer{text-align:center;padding:20px;color:#999;font-size:0.85rem;margin-top:40px}
+        @media(max-width:768px){header h1{font-size:1.8rem}main{padding:20px}.radio-group{flex-direction:column;gap:10px}.btn{width:100%}}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🏁 FORMULA 1 EVENT REGISTRATION</h1>
+    <p>"Experience the Speed, Feel the Rush"</p>
+</header>
+<div class="banner">
+    <img src="banner.jpg" alt="Formula 1 Banner">
+</div>
+
+<main>
+    <section>
+        <h2>Event Highlights</h2>
+
+        <h3>Race Day Excitement</h3>
+        <div class="media-box">
+            <video controls>
+                <source src="highlights.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <h3>Race Ambiance</h3>
+        <div class="media-box">
+            <audio controls>
+                <source src="anthem.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <small style="color:#999;display:block;margin-top:8px;">Experience the sounds of Formula 1</small>
+        </div>
+    </section>
+
+    <section style="margin-top:40px;">
+        <h2>Spectator Registration</h2>
+        <form>
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
+                <div class="form-group">
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="ticket">Ticket Type *</label>
+                    <select id="ticket" name="ticket" required>
+                        <option value="">Select Ticket</option>
+                        <option value="general">General Admission</option>
+                        <option value="vip">VIP Stand</option>
+                        <option value="premium">Premium Hospitality</option>
+                        <option value="pit">Pit Lane Access</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Favorite Team *</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="team" value="ferrari" required> Ferrari</label>
+                    <label><input type="radio" name="team" value="mercedes"> Mercedes</label>
+                    <label><input type="radio" name="team" value="mclaren"> McLaren</label>
+                    <label><input type="radio" name="team" value="other"> Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Special Requests</label>
+                <textarea id="comments" name="comments" placeholder="Any special accommodations or preferences..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="file">Upload ID</label>
+                <input type="file" id="file" name="file" accept=".pdf,.jpg,.png">
+            </div>
+
+            <button type="submit" class="btn">Register for Event</button>
+        </form>
+    </section>
+</main>
+
+<footer>&copy; 2024 Formula 1 Event Registration Portal - Experiment 1: HTML5</footer>
+
+</body>
+</html>
